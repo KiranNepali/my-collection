@@ -1,8 +1,14 @@
 "use client";
 import React, { useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform, MotionValue } from "framer-motion";
 import Image from "next/image";
+
 type Props = {};
+
+// Define a type for the props that include scrollYProgress
+interface SectionProps {
+  scrollYProgress: MotionValue<number>;
+}
 
 export default function ParallexSectionTransition({}: Props) {
   const container = useRef(null);
@@ -10,6 +16,7 @@ export default function ParallexSectionTransition({}: Props) {
     target: container,
     offset: ["start start", "end end"],
   });
+
   return (
     <main ref={container} className="bg-black relative h-[200vh]">
       <Section1 scrollYProgress={scrollYProgress} />
@@ -18,9 +25,11 @@ export default function ParallexSectionTransition({}: Props) {
   );
 }
 
-const Section1 = ({ scrollYProgress }) => {
+// Section1 component with explicit type for scrollYProgress
+const Section1: React.FC<SectionProps> = ({ scrollYProgress }) => {
   const scale = useTransform(scrollYProgress, [0, 1], [1, 0.8]);
   const rotate = useTransform(scrollYProgress, [0, 1], [0, -5]);
+
   return (
     <motion.div
       style={{ scale, rotate }}
@@ -33,9 +42,11 @@ const Section1 = ({ scrollYProgress }) => {
   );
 };
 
-const Section2 = ({ scrollYProgress }) => {
+// Section2 component with explicit type for scrollYProgress
+const Section2: React.FC<SectionProps> = ({ scrollYProgress }) => {
   const scale = useTransform(scrollYProgress, [0, 1], [0.8, 1]);
   const rotate = useTransform(scrollYProgress, [0, 1], [-5, 0]);
+
   return (
     <motion.div
       style={{ scale, rotate }}

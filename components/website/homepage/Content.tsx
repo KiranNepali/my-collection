@@ -9,7 +9,7 @@ export default function Content({}: Props) {
   return (
     <div>
       <h1 className="w-8/12  mx-auto text-[3vw] leading-tight font-medium">
-        Welcome to my blog I'm Kiran and here I document my latest explorations.
+        {` Welcome to my blog I'm Kiran and here I document my latest explorations. `}
       </h1>
       <Cards />
     </div>
