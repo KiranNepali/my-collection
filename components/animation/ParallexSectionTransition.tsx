@@ -33,9 +33,9 @@ const Section1: React.FC<SectionProps> = ({ scrollYProgress }) => {
   return (
     <motion.div
       style={{ scale, rotate }}
-      className="sticky top-0 h-screen bg-black flex justify-center items-center"
+      className="sticky top-0 h-screen bg-white flex justify-center items-center"
     >
-      <h1 className="uppercase text-center text-white tracking-widest leading-none text-[4vw] font-black">
+      <h1 className="uppercase text-center text-black tracking-widest leading-none text-[4vw] font-black">
         Parallex Section <br /> Transition
       </h1>
     </motion.div>
