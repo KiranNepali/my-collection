@@ -36,8 +36,8 @@ const Cards = () => {
               className="w-full h-[80%] rounded-lg group group-hover:translate-y-[-4px] duration-300 object-cover object-center"
               alt={section.title}
             />
-            <h3 className="text-[1.2vw] font-semibold">{section.title}</h3>
-            <p className="text-[0.8vw] text-zinc-700">{section.description}</p>
+            <h3 className="text-[1.2vw] font-semibold">{`${section.title}`}</h3>
+            <p className="text-[0.8vw] text-zinc-700">{`${section.description}`}</p>
           </Link>
         ))}
       </div>
