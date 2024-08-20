@@ -3,6 +3,7 @@ import { Icon } from "@iconify/react";
 import Link from "next/link";
 import React, { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import Image from "next/image";
 
 type Props = {};
 
@@ -18,13 +19,16 @@ export default function Navbar({}: Props) {
       <div className="w-10/12 mx-auto flex justify-between items-center">
         {/* logo  */}
         <Link href="/" className="font-black uppercase text-[1.3vw]">
-          K
+          <Image
+            width={5000}
+            height={5000}
+            className="w-[1.2vw]"
+            src="/logo.svg"
+            alt="logo"
+          ></Image>
         </Link>
         {/* ham  */}
-        <div
-          onClick={handleMenuLink}
-          className="relative "
-        >
+        <div onClick={handleMenuLink} className="relative ">
           <Icon
             icon="solar:hamburger-menu-bold"
             className="w-7 h-7 cursor-pointer hover:scale-95 duration-300 text-zinc-700"
